@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+
+echo "$@" > $(dirname $0)/captured.log

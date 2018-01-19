@@ -1,0 +1,8 @@
+#! /usr/bin/env bash
+set -ex
+
+go fmt
+ruby test/integration/test.rb
+
+# gox binary pulled from: https://github.com/mitchellh/gox
+gox -output "_dist/{{.OS}}_{{.Arch}}/rkt-launch" -os "linux darwin" -arch "386"
